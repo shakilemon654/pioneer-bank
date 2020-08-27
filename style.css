@@ -1,0 +1,14 @@
+.login-page {
+    margin: 80px 300px 0px 300px;
+}
+
+.login-area {
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-top: 50px;
+}
+
+.login-form {
+    padding: 30px;
+}

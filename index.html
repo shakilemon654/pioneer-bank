@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pioneer Bank</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-page">
+        <h1 class="text-center">Welcome To Pioneer Bank</h1>
+        <div class="login-area">
+            <h3 class="text-center">Login to online bank</h3>
+            <div class="login-form">
+                <form action="">
+                    <!-- <label for="email">Email address:</label> -->
+                    <input type="" id="email" class="form-control" placeholder="Enter your email address">
+                    <br>
+                    <!-- <label for="password">Password:</label> -->
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                    <br>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" class="btn btn-success" id="login-enter-btn">Enter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("login-enter-btn").addEventListener("click", function(){
+            document.getElementsByClassName("login-page").style.display = "none";
+        })
+    </script>
+</body>
+</html>

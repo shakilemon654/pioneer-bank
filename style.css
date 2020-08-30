@@ -1,14 +1,50 @@
-.login-page {
-    margin: 80px 300px 0px 300px;
+body{
+    padding: 100px;
 }
-
-.login-area {
-    box-shadow: 5px 5px 10px gray;
-    border-radius: 10px;
-    padding-top: 10px;
+.login-area{
     margin-top: 50px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
 }
 
 .login-form {
-    padding: 30px;
+    padding-top: 30px;
+}
+/* #transaction-area{
+    display: none;
+}
+.status{
+    margin: 0 20px;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.deposit{
+    background-color: slateblue;
+}
+.withdraw{
+    background-color: lightsalmon;
+}
+.balance{
+    background-color: orange;
+} */
+
+#login-page {
+    display: none;
+}
+.small-box-style {
+    color: white;
+    padding: 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+}
+.deposit {
+    background-color: slateblue;
+}
+.withdraw {
+    background-color: lightsalmon;
+}
+.balance {
+    background-color: orange;
 }

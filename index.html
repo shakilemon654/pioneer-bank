@@ -3,33 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pioneer Bank</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-page">
-        <h1 class="text-center">Welcome To Pioneer Bank</h1>
+    <div id="login-page">
+        <h1 class="text-center">Welcome to Pioneer Bank</h1>
         <div class="login-area">
-            <h3 class="text-center">Login to online bank</h3>
+            <h4 class="text-center">Login to online bank</h4>
             <div class="login-form">
-                <form action="">
-                    <!-- <label for="email">Email address:</label> -->
-                    <input type="" id="email" class="form-control" placeholder="Enter your email address">
+                <input type="email" class="form-control" placeholder="Enter your email" required>
+                <br>
+                <input type="password" class="form-control" placeholder="Enter your password" required>
+                <br>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="submit" id="login" class="btn btn-success">Enter</button>
+            </div>
+        </div>
+    </div>
+    <div class="transaction-area">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="deposit small-box-style">
+                    <h5>Deposit</h5>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw small-box-style">
+                    <h5>Withdraw</h5>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance small-box-style">
+                    <h5>Balance</h5>
+                    <h2>$1240</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="login-area">
+                    <h4>Deposit</h4>
+                    <input type="text" class="form-control" placeholder="$ amount you want to deposit">
                     <br>
-                    <!-- <label for="password">Password:</label> -->
-                    <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                    <button class="btn btn-success">Deposit</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="login-area">
+                    <h4>Withdraw</h4>
+                    <input type="text" class="form-control" placeholder="$ amount you want to withdraw">
                     <br>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
-                    <button type="submit" class="btn btn-success" id="login-enter-btn">Enter</button>
-                </form>
+                    <button class="btn btn-success">Withdraw</button>
+                </div>
             </div>
         </div>
     </div>
     <script>
-        document.getElementById("login-enter-btn").addEventListener("click", function(){
-            document.getElementsByClassName("login-page").style.display = "none";
-        })
+        // login button event handler
+        // document.getElementById("login").addEventListener("click", function(){
+        //     document.getElementById("login-page").style.display = "none";
+        // })
+        
+
     </script>
 </body>
 </html>

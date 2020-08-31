@@ -23,53 +23,101 @@
             </div>
         </div>
     </div>
-    <div class="transaction-area">
+    <div id="transaction-area">
         <div class="row">
             <div class="col-md-4">
                 <div class="deposit small-box-style">
                     <h5>Deposit</h5>
-                    <h2>$00</h2>
+                    <h2>$ <span id="currentDeposit">00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="withdraw small-box-style">
                     <h5>Withdraw</h5>
-                    <h2>$00</h2>
+                    <h2>$ <span id="currentWithdraw">00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="balance small-box-style">
                     <h5>Balance</h5>
-                    <h2>$1240</h2>
+                    <h2>$ <span id="currentBalance">1240</span></h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="login-area">
-                    <h4>Deposit</h4>
-                    <input type="text" class="form-control" placeholder="$ amount you want to deposit">
+                    
+                    <label for="depositAmount"><h4>Deposit</h4></label>
+                    <input id="depositAmount" type="text" class="form-control" placeholder="$ amount you want to deposit">
                     <br>
-                    <button class="btn btn-success">Deposit</button>
+                    <button id="addDeposit" class="btn btn-success">Deposit</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="login-area">
-                    <h4>Withdraw</h4>
-                    <input type="text" class="form-control" placeholder="$ amount you want to withdraw">
+                    <label for="withdrawAmount"><h4>Withdraw</h4></label>
+                    <input id="withdrawAmount" type="text" class="form-control" placeholder="$ amount you want to withdraw">
                     <br>
-                    <button class="btn btn-success">Withdraw</button>
+                    <button id="withdrawMoney" class="btn btn-success">Withdraw</button>
                 </div>
             </div>
         </div>
     </div>
     <script>
         // login button event handler
-        // document.getElementById("login").addEventListener("click", function(){
-        //     document.getElementById("login-page").style.display = "none";
-        // })
-        
+        document.getElementById("login").addEventListener("click", function(){
+            document.getElementById("login-page").style.display = "none";
+            document.getElementById("transaction-area").style.display = "block";
+        })
 
+        // deposit button event handler
+        document.getElementById("addDeposit").addEventListener("click", function(){
+            const depositAmount = parseFloat(document.getElementById("depositAmount").value);
+            document.getElementById("depositAmount").value = "";
+            if (isNaN(depositAmount)){
+                alert("Enter valid numbers from 0 to 9.");
+            }
+            else if (depositAmount <= 0){
+                alert("Please insert positive number input");
+            }
+            else {
+                let currentDeposit = parseFloat(document.getElementById("currentDeposit").innerText);
+                currentDeposit = currentDeposit + depositAmount;
+                document.getElementById("currentDeposit").innerText = currentDeposit;
+
+                let currentBalance = parseFloat(document.getElementById("currentBalance").innerText);
+                currentBalance = currentBalance + depositAmount;
+                document.getElementById("currentBalance").innerText = currentBalance;
+            }
+            
+        })
+
+        // withdraw button event handler
+        document.getElementById("withdrawMoney").addEventListener("click", function(){
+            const withdrawAmount = parseFloat(document.getElementById("withdrawAmount").value);
+            document.getElementById("withdrawAmount").value = "";
+            if (isNaN(withdrawAmount)){
+                alert("Enter valid numbers from 0 to 9.");
+            }
+            else if (withdrawAmount <= 0){
+                alert("Please insert positive number input");
+            }
+            else {
+                let currentBalance = parseFloat(document.getElementById("currentBalance").innerText);
+                if (withdrawAmount <= currentBalance){
+                    let currentWithdraw = parseFloat(document.getElementById("currentWithdraw").innerText);
+                    currentWithdraw = currentWithdraw + withdrawAmount;
+                    document.getElementById("currentWithdraw").innerText = currentWithdraw;
+
+                    currentBalance = currentBalance - withdrawAmount;
+                    document.getElementById("currentBalance").innerText = currentBalance;
+                }
+                else{
+                    alert("You don't have sufficient balance to withdraw!");
+                }
+            }
+        })
     </script>
 </body>
 </html>
